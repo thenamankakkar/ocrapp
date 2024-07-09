@@ -1,0 +1,31 @@
+<header>
+  <div class="logo">
+    <!-- Your logo or application name -->
+    <h1>File upload & OCR operation</h1>
+  </div>
+  <nav>
+    <button [routerLink]="['/login']" routerLinkActive="router-link-active"  (click)="logout()">Logout</button>
+  </nav>
+</header>
+
+<div class="file-upload-container">
+<form (submit)="onSubmit($event)">
+  <input type="file" (change)="onFileSelected($event)" accept=".jpg,.jpeg,.png" required>
+  <button type="submit" [disabled]="!selectedFile">Upload File</button>
+</form>
+</div>
+
+<div class="container">
+  <div class="left">
+    <!-- Left content goes here -->
+    <p>This is the left div</p>
+    <img [src]="imgSrc" style="width: auto; height: auto;">
+  </div>
+  <div class="right">
+    <!-- Right content goes here -->
+    <p>{{imgText}}</p>
+  </div>
+</div>
+
+
+
